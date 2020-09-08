@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="checkbox"
+        android:summary="Tap to check if on or off"
+        android:title="Checkbox Preference" />
+    <EditTextPreference
+        android:dialogTitle="Enter a text"
+        android:key="text"
+        android:summary="Click to show a text entry dialog"
+        android:title="EditText Preference" />
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="switch"
+        android:summary="Click to switch on or off"
+        android:title="Switch Preference" />
+    <PreferenceCategory android:title="Advanced Settings">
+        <ListPreference
+            android:key="list"
+            android:summary="Click to show a list to choose from"
+            android:title="List Preference"
+            android:dialogTitle="Select duration"
+            android:defaultValue="default_value"
+            android:entries="@array/settings_list_preference_titles"
+            android:entryValues="@array/settings_list_preference_values"
+            />
+        <DropDownPreference
+            android:key="dropdown"
+            android:summary="Dropdown"
+            android:title="Dropdown Preference"
+            android:defaultValue="default_value"
+            android:entries="@array/settings_list_preference_titles"
+            android:entryValues="@array/settings_list_preference_values"
+            />
+        <SeekBarPreference
+            android:key="seekBar"
+            android:summary="SeekBar"
+            android:title="SeekBar Preference" />
+        <Preference
+            android:summary="Click to start an activity"
+            android:title="Preference">
+            <intent
+                android:action="com.chikeandroid.settingsscreendemo.SETTING_START_ACTIVITY"
+                android:targetClass="com.redbu11.MyActivity"
+                android:targetPackage="com.redbu11" />
+        </Preference>
+        <Preference android:title="web">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.example.com" />
+        </Preference>
+    </PreferenceCategory>
+</androidx.preference.PreferenceScreen>
